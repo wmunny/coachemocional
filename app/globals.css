@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Estilos custom para la aplicación */
+.coach-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.loading-spinner {
+  @apply animate-spin h-5 w-5;
+}
+
+.response-text {
+  @apply text-sm leading-relaxed text-gray-800;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.model-panel {
+  @apply border rounded-lg p-6 shadow-sm;
+  transition: all 0.2s ease-in-out;
+}
+
+.model-panel:hover {
+  @apply shadow-md;
+} 
